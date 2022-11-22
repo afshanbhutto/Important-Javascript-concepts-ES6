@@ -38,3 +38,24 @@
 	console.log('done!')
 
 	output: 1 2 3 4 5 7 8 9 10 done!
+
+## 3. Arrow Function:
+  Arrow functions  has been introduced in ES6 version of Javascript, which allows cleaner way of  coding as compared to regular function.
+
+	//one liner code
+	    // const greet=()=>"Good Morning!"
+	    // console.log(greet())
+
+	// when returning value
+	    // const greet=()=>{
+	    //     return "Good Morning!"
+	    // }
+	    // console.log(greet())
+
+	// can pass one parameter without using braces
+		// const greet=name=>"Good Morning "+name
+		// console.log(greet("Afshan"))
+
+	// but cannot pass more than one parameters without using braces
+		const greet=(name, ending)=>"Good Morning "+name+" "+ending;
+		console.log(greet("Afshan", "Bye"))
