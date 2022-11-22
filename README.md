@@ -114,7 +114,7 @@ Arrow function pointouts/bind its parents 'this' rather than its own
 
 		     // Expected output: 8
 	     
-##6. Rest parameter:
+## 6. Rest parameter:
 It is mproved way to handle function parameters. it allows to represent an indefinite number of parameters as an array.
 
 		************ Problem in ES5************
