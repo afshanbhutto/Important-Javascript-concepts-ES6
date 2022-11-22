@@ -66,3 +66,36 @@
 	// but cannot pass more than one parameters without using braces
 		const greet=(name, ending)=>"Good Morning "+name+" "+ending;
 		console.log(greet("Afshan", "Bye"))
+
+##4. Lexical This in arrow function:
+Arrow function pointouts/bind its parents 'this' rather than its own
+
+	###### Example:
+	let obj1 = {
+		greeting:"Good Morning ",
+		names: ["Afshan", "Rabia", "Samia", "Asad"],
+		speak(){
+		    let greeting ="morning"
+		    this.names.forEach((student)=>{
+			console.log(this.greeting+" Obedient "+ student);
+		    });
+		}
+	    }
+
+	    obj1.speak();
+
+##5. Defualt parameters:
+
+	// ************to solve below mentioned problem we are using defualt parameters*****************
+
+	    function sum(a,b){
+	         console.log(a+b);
+	    }
+	    sum(4)
+
+	// ************ defualt parameters*****************
+
+	    function sum(a,b=4){
+	         console.log(a+b);
+	     }
+	    sum(4)
