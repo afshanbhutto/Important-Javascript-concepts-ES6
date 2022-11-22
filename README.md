@@ -71,7 +71,7 @@
 		const greet=(name, ending)=>"Good Morning "+name+" "+ending;
 		console.log(greet("Afshan", "Bye"))
 
-##4. Lexical This in arrow function:
+## 4. Lexical This in arrow function:
 Arrow function pointouts/bind its parents 'this' rather than its own
 
 	************  Example: ************ 
@@ -88,7 +88,7 @@ Arrow function pointouts/bind its parents 'this' rather than its own
 
 	    obj1.speak();
 
-##5. Defualt parameters:
+## 5. Defualt parameters:
 
 	************ to solve below mentioned problem we are using defualt parameters ************ 
 
@@ -126,7 +126,7 @@ It is mproved way to handle function parameters. it allows to represent an indef
 		}
 		sum(1,2,3,4,5,6,7)
 		
-##7. Spread operator:
+## 7. Spread operator:
 It used in variable array where there is more than 1 values expected. Its syntax is same as Rest parameters but function is  totally opposite.
 "Spread syntax "expands" an array into its elements, while rest syntax collects multiple elements and "condenses" them into a single element"
 
@@ -151,67 +151,67 @@ It used in variable array where there is more than 1 values expected. Its syntax
 
 		     console.log(arr1)
 
-##8. Events
-##9. Objects
-##10. ES6-Arrays:
+## 8. Events
+## 9. Objects
+## 10. ES6-Arrays:
 An array is a collection of values of the same data type. It is a user-defined type.
 	
-	**************** Declaring array ****************
-	
-	**************** 1.frist way ****************
-	
-		let names = ["afshan","ariya","suman","saba","sheema"];
+		**************** Declaring array ****************
 
-		var i;
+		**************** 1.frist way ****************
 
-		for(i=0; i<names.length; i++){
-		    console.log(names[i])
-		}
+			let names = ["afshan","ariya","suman","saba","sheema"];
 
-	**************** second way--> using new keyword ****************
+			var i;
 
-		var arr = new Array(5);
+			for(i=0; i<names.length; i++){
+			    console.log(names[i])
+			}
 
-		var j;
-		for(j=0;j<=(arr.length)-1; j++){
-		    arr[j]=j*5;
-		    console.log(arr[j])
-		}
+		**************** second way--> using new keyword ****************
 
-	
-	
-	**************** Multi-dimensional array ****************
+			var arr = new Array(5);
 
-		var my_arr =[[1,2,3,4],[5,6,7,9],[1,4,8]];
-
-		console.log(my_arr[2][1])
-
-		var k;
-		for(k=0;k<=(my_arr.length)-1; k++){
-		    console.log(my_arr[k])
-		}
+			var j;
+			for(j=0;j<=(arr.length)-1; j++){
+			    arr[j]=j*5;
+			    console.log(arr[j])
+			}
 
 
-	**************** passing array to function****************
 
-		const studentNames =(names)=>{
-		    var s;
-		    for(s=0;s<=(names.length)-1; s++){
-		    console.log(names[s])
-		}
-		}
-		studentNames(names);
+		**************** Multi-dimensional array ****************
 
-	**************** returning array from function****************
-	
-		function show() {   
-		    return new Array("Blue", "Red", "Green", "Yellow")   
-		 }  
-		 show() 
-		 var colors = show()   
-		 for(var i in colors) {   
-		    console.log(colors[i])     
-		 } 
+			var my_arr =[[1,2,3,4],[5,6,7,9],[1,4,8]];
+
+			console.log(my_arr[2][1])
+
+			var k;
+			for(k=0;k<=(my_arr.length)-1; k++){
+			    console.log(my_arr[k])
+			}
+
+
+		**************** passing array to function****************
+
+			const studentNames =(names)=>{
+			    var s;
+			    for(s=0;s<=(names.length)-1; s++){
+			    console.log(names[s])
+			}
+			}
+			studentNames(names);
+
+		**************** returning array from function****************
+
+			function show() {   
+			    return new Array("Blue", "Red", "Green", "Yellow")   
+			 }  
+			 show() 
+			 var colors = show()   
+			 for(var i in colors) {   
+			    console.log(colors[i])     
+			 } 
    Few Array methods:
    1.filter()
    2.map()
@@ -220,48 +220,87 @@ An array is a collection of values of the same data type. It is a user-defined t
    5.some()
    6.reduce()
    7.includes()
-   
-##11. OOP in Javascript:
-	###.Classes
-		### Methods
+ 
+## 11. Destructuring:
+Destructuring is an efficient way to extract multiple values from data that is stored in arrays or objects. When destructuring an array, we use their positions (or index) in an assignment.
+
+		**************** Array Destructuring **************** 
+		Example:
+		var fruits = ["banana", "mango", "apple", "grapes", "pineapple", "strawberry"];  
+
+		// destructuring assignment  
+		var[fruit1, fruit2, fruit3] = fruits;  
+
+		console.log(fruit1); // banana  
+		console.log(fruit2); // mango  
+		console.log(fruit3); // apple
+		
+## 12. OOP in Javascript:
+### Classes
+
+	****************  Methods **************** 
+	
 		1.Constructor Method --> It is  automatically called once object of  class is  madeup
 		2. Prototype Method --> we have to assign name  of method by ourselves and  it is only called by object of class
 		3. Static Method --> we have to write static word before method name
-	### object
-	
-	Example:
+		
+		
+		**************** Example:**************** 
 		class student{
 
-	    #gender;
-	    **************** Methods ****************
-	   **************** 1. Constructor Method --> It is  automatically called once object of  class is  madeup
-	    constructor(firstname,lastname,age, gender){
-		//properties
-		this.name = firstname;
-		this.caste= lastname;
-		this.yourage= age;
-		this.#gender=gender;
-		console.log("Hello I am constructer function")
-	    }
-
-	    **************** 2. Prototype Method --> we have to assign name  of method by ourselves and  it is only called by object of class
+		    #gender;
+		    
+		**************** Methods ****************
+		    
+		    
+		**************** 1. Constructor Method --> It is  automatically called once object of  class is  madeup
+		
+		    constructor(firstname,lastname,age, gender){
+		    
+			//properties
+			this.name = firstname;
+			this.caste= lastname;
+			this.yourage= age;
+			this.#gender=gender;
+			console.log("Hello I am constructer function")
+		    }
+		
+	    	**************** 2. Prototype Method --> we have to assign name  of method by ourselves and  it is only called by object of class
 	    
-	    hello(){
-		console.log(`Hello ${this.name} ${this.caste}. Your age is ${this.yourage} and your gender is ${this.#gender}`);
-	    }
+		    hello(){
+		    
+			console.log(`Hello ${this.name} ${this.caste}. Your age is ${this.yourage} and your gender is ${this.#gender}`);
+		    }
 
-	    **************** 3. Static Method --> we have to write static word before method name
+		
+	    	**************** 3. Static Method --> we have to write static word before method name
 
-	    static welocme(methodname){
-		console.log(`Hello welcome to ${methodname} Method`);
-	    }
+		    static welocme(methodname){
+		    
+			console.log(`Hello welcome to ${methodname} Method`);
+		    }
 
-	}
+		}
 
 	**************** Object in JS ****************
+		
 		let a = new student("Afshan", "Bhutto", 22, "Female");
 		let b = new student("Areeb", "Haider", 9,"Male");
 		a.hello();
 		b.hello();
 
 		student.welocme("Static");
+	
+	**************** Inheritence ****************
+	
+		class User extends student {   
+			   show() {   
+			      console.log("The name of the student is:  "+this.name)   
+			   }   
+			}   
+			var obj = new User('Muneer');   
+			obj.show()  
+
+### Inheritence: 
+An inheritance is the ability to create new entities from an existing one. The class that is extended for creating newer classes is referred to as superclass/parent class, while the newly created classes are called subclass/child class.
+		
