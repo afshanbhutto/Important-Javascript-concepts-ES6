@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events In JS</title>
+    <style>
+        #btn{
+          padding:10px,14px;
+          color: blue;
+          background-color: aqua;
+          border: 2px solid blue;
+          border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" onmouseover="mouseOver()">This is Heading</h1>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, sed? Reprehenderit dolore 
+    accusantium repudiandae fuga, praesentium error veniam minus magni eius quia a sequi ipsum quos dicta corporis? 
+    Voluptatem commodi voluptate reprehenderit quos illo ab repellendus quidem inventore. Tempore culpa vitae 
+    architecto vel repellat dolorem deserunt similique, magnam nulla voluptatibus nostrum libero quasi, iste 
+    impedit non dolore illum sunt in dicta necessitatibus corporis iusto. Perferendis aspernatur, dolorem doloremque 
+    maxime quas excepturi culpa, sunt, quod saepe accusamus labore sint. Omnis minima quos earum quo necessitatibus 
+    nobis deleniti enim corporis provident, molestias maiores, sed atque iure, accusantium obcaecati molestiae? 
+    Accusantium, veniam soluta. Suscipit, eos praesentium quibusdam dolorem, sunt aliquid error, totam doloremque 
+    iusto laudantium laborum eum enim. Accusamus eaque quisquam nulla ipsam commodi tempora suscipit sit debitis 
+    corporis eos aspernatur ducimus libero quidem atque sapiente alias amet, beatae quis placeat reiciendis fuga 
+    pariatur reprehenderit! Fugiat laudantium sit, animi totam quasi quaerat nulla, natus vel labore adipisci ipsum 
+    vitae quisquam, ducimus rem. Saepe tenetur a error maxime nihil, distinctio reprehenderit veniam odit, 
+    exercitationem delectus, repellat adipisci. Sed blanditiis perspiciatis fugit iusto quis modi exercitationem 
+    neque, cupiditate maiores corporis ratione quam officia quia similique explicabo aliquam quasi autem totam rem 
+    libero. Veritatis corporis veniam voluptate. Explicabo dignissimos amet beatae iste cumque, reprehenderit atque 
+    similique vel delectus totam voluptas nihil dicta voluptates tenetur dolores. Delectus unde ut harum reprehenderit
+     molestiae explicabo voluptates incidunt neque maxime totam, illum culpa nemo ipsam aperiam tenetur rerum officiis.
+      Optio rerum illum et voluptas eveniet similique impedit accusamus natus! Quidem cumque iusto doloremque </p>
+    <button id="btn" onclick="toggleBtn()">TOggle</button>
+
+    <script>
+
+
+      let mouseOver=()=>{
+        let heading =document.getElementById("heading");
+        alert("Mouse over");
+      
+      }
+      let toggleBtn=()=>{
+        let para = document.getElementById("para");
+        let btn = document.getElementById("btn");
+
+        if(para.style.display !='none'){
+          para.style.display = 'none'
+        }
+        else{
+          para.style.display = "block"
+        }
+      }
+      
+
+    </script>
+</body>
+</html>
