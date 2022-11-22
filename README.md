@@ -21,7 +21,7 @@
 	}while(i<10);
 	console.log('done!')
 	
-	output: 1 2 3 4 5 6 done!
+	//Expected output: 1 2 3 4 5 6 done!
 	
 	
 	The continue key word is  used when breaking the block
@@ -37,7 +37,7 @@
 	}while(j<10);
 	console.log('done!')
 
-	output: 1 2 3 4 5 7 8 9 10 done!
+	//Expected output: 1 2 3 4 5 7 8 9 10 done!
 
 ## 3. Arrow Function:
   Arrow functions  has been introduced in ES6 version of Javascript, which allows cleaner way of  coding as compared to regular function.
@@ -74,57 +74,72 @@
 ## 4. Lexical This in arrow function:
 Arrow function pointouts/bind its parents 'this' rather than its own
 
-	************  Example: ************ 
-	let obj1 = {
-		greeting:"Good Morning ",
-		names: ["Afshan", "Rabia", "Samia", "Asad"],
-		speak(){
-		    let greeting ="morning"
-		    this.names.forEach((student)=>{
-			console.log(this.greeting+" Obedient "+ student);
-		    });
-		}
-	    }
+		************  Example: ************ 
+		let obj1 = {
+			greeting:"Good Morning ",
+			names: ["Afshan", "Rabia", "Samia", "Asad"],
+			speak(){
+			    let greeting ="morning"
+			    this.names.forEach((student)=>{
+				console.log(this.greeting+" Obedient "+ student);
+			    });
+			}
+		    }
 
-	    obj1.speak();
+		    obj1.speak();
 
-## 5. Defualt parameters:
+		    //Expected output: 
+		    Good Morning obedient Afshan
+		    Good Morning obedient Rabia
+		    Good Morning obedient Samia
+	    	    Good Morning obedient Asad
 
-	************ to solve below mentioned problem we are using defualt parameters ************ 
+## 5. Default parameters:
 
-	    function sum(a,b){
-	         console.log(a+b);
-	    }
-	    sum(4)
+		************ to solve below mentioned problem we are using defualt parameters ************ 
 
-	************ defualt parameters ************ 
+		    function sum(a,b){
+			 console.log(a+b);
+		    }
+		    sum(4)
 
-	    function sum(a,b=4){
-	         console.log(a+b);
-	     }
-	    sum(4)
-	    
+		    // Expected output: NaN
+
+		************ defualt parameters ************ 
+
+		    function sum(a,b=4){
+			 console.log(a+b);
+		     }
+		    sum(4)
+
+		     // Expected output: 8
+	     
 ##6. Rest parameter:
 It is mproved way to handle function parameters. it allows to represent an indefinite number of parameters as an array.
 
-    	************ Problem in ES5************
-	    function sum(a,b){
-		 console.log(a+b)
-	    }
-	    sum(1+2+3+4+5+6);
-
-
-	*********** *but now using ES6 using Rest Parameters ************
-		function sum(...inputs){
-		    console.log(...inputs);
-		    console.log(inputs);
-		    let total=0;
-		    for (let i of inputs){
-			total +=i;
+		************ Problem in ES5************
+		    function sum(a,b){
+			 console.log(a+b)
 		    }
-		    console.log(total)
-		}
-		sum(1,2,3,4,5,6,7)
+		    sum(1+2+3+4+5+6);
+
+		    // Expected output: NaN
+
+			*********** *but now using ES6 using Rest Parameters ************
+			function sum(...inputs){
+			    console.log(...inputs);
+			    console.log(inputs);
+			    let total=0;
+			    for (let i of inputs){
+				total +=i;
+			    }
+			    console.log(total)
+			}
+			sum(1,2,3,4,5,6,7)
+		    //Expected output:
+		    1 2 3 4 5 6 7
+		    (7) [1, 2, 3, 4, 5, 6, 7]
+		    28
 		
 ## 7. Spread operator:
 It used in variable array where there is more than 1 values expected. Its syntax is same as Rest parameters but function is  totally opposite.
@@ -140,7 +155,9 @@ It used in variable array where there is more than 1 values expected. Its syntax
 		     arr1 = arr1.concat(arr2).concat(arr3)
 
 		     console.log(arr1)
-
+		
+		// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+		
 		************************* Replace concat()***********************
 
 		     let arr1=[1,2,3];
@@ -150,7 +167,8 @@ It used in variable array where there is more than 1 values expected. Its syntax
 		     arr1 = [...arr1,...arr2,...arr3]
 
 		     console.log(arr1)
-
+		// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+		
 ## 8. Events
 ## 9. Objects
 ## 10. ES6-Arrays:
