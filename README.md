@@ -11,113 +11,117 @@
 
 The break key word is used when breaking the loop, for example:
 	  
-	```javascript
-	let i =0;
-	do{
-	    console.log(i+1);
-	    if(i ===5){
-		break;
-	    }
-	    i++;
-	}while(i<10);
-	console.log('done!')
+```javascript
+let i =0;
+do{
+	console.log(i+1);
+	 if(i ===5){
+	break;
+	}
+i++;
+}while(i<10);
+console.log('done!')
+//Expected output: 1 2 3 4 5 6 done!
+```
 	
-	//Expected output: 1 2 3 4 5 6 done!
-	
-	
-	The continue key word is  used when breaking the block
-	
-	let j =0;
+The continue key word is  used when breaking the block
+
+```javascript
+let j =0;
 	do{
 	    if(j ===5){
 		j++;
 		continue;
 	    }
-	    console.log(j+1);
-	    j++;
-	}while(j<10);
-	console.log('done!')
+console.log(j+1);
+j++;
+}while(j<10);
+console.log('done!')
 
-	//Expected output: 1 2 3 4 5 7 8 9 10 done!```
+//Expected output: 1 2 3 4 5 7 8 9 10 done!
+```
 
 ## 3. Arrow Function:
-  Arrow functions  has been introduced in ES6 version of Javascript, which allows cleaner way of  coding as compared to regular function.
+Arrow functions  has been introduced in ES6 version of Javascript, which allows cleaner way of  coding as compared to regular function.
+```javascript
+### Regular Function
+function greet(){
+	return "Good Morning!"
+}
+console.log(greet())
+```
+```javascript	
+### Arrow function
+************ one liner code ************ 
+	
+const greet=()=>"Good Morning!"
+console.log(greet())
 
-	### Regular Function
-	function greet(){
-		return "Good Morning!"
-	}
-	console.log(greet())
+************ when returning value *********** 
 	
-	### Arrow function
-	************ one liner code ************ 
-	
-	    const greet=()=>"Good Morning!"
-	    console.log(greet())
+const greet=()=>{
+	   return "Good Morning!"
+}
+console.log(greet())
 
-	************ when returning value *********** 
+************ can pass one parameter without using braces ************ 
 	
-	    const greet=()=>{
-	         return "Good Morning!"
-	     }
-	     console.log(greet())
+const greet=name=>"Good Morning "+name
+\console.log(greet("Afshan"))
 
-	************ can pass one parameter without using braces ************ 
+************ but cannot pass more than one parameters without using braces ************ 
 	
-		const greet=name=>"Good Morning "+name
-		console.log(greet("Afshan"))
-
-	************ but cannot pass more than one parameters without using braces ************ 
-	
-		const greet=(name, ending)=>"Good Morning "+name+" "+ending;
-		console.log(greet("Afshan", "Bye"))
+const greet=(name, ending)=>"Good Morning "+name+" "+ending;
+console.log(greet("Afshan", "Bye"))
+```
 
 ## 4. Lexical This in arrow function:
 Arrow function pointouts/bind its parents 'this' rather than its own
 
-		************  Example: ************ 
-		let obj1 = {
-			greeting:"Good Morning ",
-			names: ["Afshan", "Rabia", "Samia", "Asad"],
-			speak(){
-			    let greeting ="morning"
-			    this.names.forEach((student)=>{
-				console.log(this.greeting+" Obedient "+ student);
-			    });
-			}
-		    }
+```javascript
+************  Example: ************ 
+let obj1 = {
+	greeting:"Good Morning ",
+	names: ["Afshan", "Rabia", "Samia", "Asad"],
+	speak(){
+	let greeting ="morning"
+	this.names.forEach((student)=>{
+	console.log(this.greeting+" Obedient "+ student);
+	});
+	}
+	}
 
-		    obj1.speak();
+	 obj1.speak();
 
-		    //Expected output: 
-		    Good Morning obedient Afshan
-		    Good Morning obedient Rabia
-		    Good Morning obedient Samia
-	    	    Good Morning obedient Asad
-
+	 //Expected output: 
+	 Good Morning obedient Afshan
+	 Good Morning obedient Rabia
+	 Good Morning obedient Samia
+	  Good Morning obedient Asad
+```
 ## 5. Default parameters:
+```javascript
+*********** to solve below mentioned problem we are using defualt parameters ************ 
 
-		************ to solve below mentioned problem we are using defualt parameters ************ 
+function sum(a,b){
+	 console.log(a+b);
+}
+ sum(4)
 
-		    function sum(a,b){
-			 console.log(a+b);
-		    }
-		    sum(4)
+ // Expected output: NaN
+```
+```javascript
+************ defualt parameters ************ 
+function sum(a,b=4){
+	console.log(a+b);
+}
+sum(4)
 
-		    // Expected output: NaN
-
-		************ defualt parameters ************ 
-
-		    function sum(a,b=4){
-			 console.log(a+b);
-		     }
-		    sum(4)
-
-		     // Expected output: 8
-	     
+// Expected output: 8
+```
 ## 6. Rest parameter:
 It is mproved way to handle function parameters. it allows to represent an indefinite number of parameters as an array.
-
+```javascript
 		************ Problem in ES5************
 		    function sum(a,b){
 			 console.log(a+b)
@@ -125,56 +129,59 @@ It is mproved way to handle function parameters. it allows to represent an indef
 		    sum(1+2+3+4+5+6);
 
 		    // Expected output: NaN
-
-			*********** *but now using ES6 using Rest Parameters ************
-			function sum(...inputs){
-			    console.log(...inputs);
-			    console.log(inputs);
-			    let total=0;
-			    for (let i of inputs){
-				total +=i;
-			    }
-			    console.log(total)
-			}
-			sum(1,2,3,4,5,6,7)
-		    //Expected output:
-		    1 2 3 4 5 6 7
-		    (7) [1, 2, 3, 4, 5, 6, 7]
-		    28
-		
+```
+```javascript
+*********** *but now using ES6 using Rest Parameters ************
+function sum(...inputs){
+	console.log(...inputs);
+	 console.log(inputs);
+	  let total=0;
+	 for (let i of inputs){
+		total +=i;
+	 }
+	 console.log(total)
+	}
+	sum(1,2,3,4,5,6,7)
+	//Expected output:
+	 1 2 3 4 5 6 7
+	(7) [1, 2, 3, 4, 5, 6, 7]
+	28
+```
 ## 7. Spread operator:
 It used in variable array where there is more than 1 values expected. Its syntax is same as Rest parameters but function is  totally opposite.
 "Spread syntax "expands" an array into its elements, while rest syntax collects multiple elements and "condenses" them into a single element"
 
-		************* Example:*************
-		************************* concat() in ES5 ***********************
+```javascript
+************* Example:*************
+************************* concat() in ES5 ***********************
 
-		     let arr1=[1,2,3];
-		     let arr2=[4,5,6];
-		     let arr3=[7,8,9];
+let arr1=[1,2,3];
+ let arr2=[4,5,6];
+let arr3=[7,8,9];
 
-		     arr1 = arr1.concat(arr2).concat(arr3)
+ arr1 = arr1.concat(arr2).concat(arr3)
 
-		     console.log(arr1)
-		
-		// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-		
-		************************* Replace concat()***********************
+\console.log(arr1)
+// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+```javascript
+************************* Replace concat()***********************
 
-		     let arr1=[1,2,3];
-		     let arr2=[4,5,6];
-		     let arr3=[7,8,9];
+ let arr1=[1,2,3];
+let arr2=[4,5,6];
+ let arr3=[7,8,9];
 
-		     arr1 = [...arr1,...arr2,...arr3]
+ arr1 = [...arr1,...arr2,...arr3]
+ console.log(arr1)
+// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 
-		     console.log(arr1)
-		// Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-		
 ## 8. Events
 ## 9. Objects
 ## 10. ES6-Arrays:
 An array is a collection of values of the same data type. It is a user-defined type.
 	
+```javascript
 		**************** Declaring array ****************
 
 		**************** 1.frist way ****************
@@ -186,7 +193,8 @@ An array is a collection of values of the same data type. It is a user-defined t
 			for(i=0; i<names.length; i++){
 			    console.log(names[i])
 			}
-
+```
+```javascript
 		**************** second way--> using new keyword ****************
 
 			var arr = new Array(5);
@@ -196,7 +204,8 @@ An array is a collection of values of the same data type. It is a user-defined t
 			    arr[j]=j*5;
 			    console.log(arr[j])
 			}
-
+```
+```javascript
 
 
 		**************** Multi-dimensional array ****************
@@ -209,7 +218,8 @@ An array is a collection of values of the same data type. It is a user-defined t
 			for(k=0;k<=(my_arr.length)-1; k++){
 			    console.log(my_arr[k])
 			}
-
+```
+```javascript
 
 		**************** passing array to function****************
 
@@ -220,7 +230,8 @@ An array is a collection of values of the same data type. It is a user-defined t
 			}
 			}
 			studentNames(names);
-
+```
+```javascript
 		**************** returning array from function****************
 
 			function show() {   
@@ -230,7 +241,9 @@ An array is a collection of values of the same data type. It is a user-defined t
 			 var colors = show()   
 			 for(var i in colors) {   
 			    console.log(colors[i])     
-			 } 
+			 }
+```
+
    Few Array methods:
    1.filter()
    2.map()
