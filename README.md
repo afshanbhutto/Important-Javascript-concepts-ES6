@@ -11,7 +11,7 @@
 
 The break key word is used when breaking the loop, for example:
 	
-	```Javascript 
+	```  
 	let i =0;
 	do{
 	    console.log(i+1);
