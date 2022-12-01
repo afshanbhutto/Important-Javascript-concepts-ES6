@@ -9,8 +9,9 @@
 	
 ## 2. break and continue keywords
 
-	The break key word is used when breaking the loop, for example:
+The break key word is used when breaking the loop, for example:
 	
+	```Javascript 
 	let i =0;
 	do{
 	    console.log(i+1);
@@ -37,7 +38,7 @@
 	}while(j<10);
 	console.log('done!')
 
-	//Expected output: 1 2 3 4 5 7 8 9 10 done!
+	//Expected output: 1 2 3 4 5 7 8 9 10 done! ```
 
 ## 3. Arrow Function:
   Arrow functions  has been introduced in ES6 version of Javascript, which allows cleaner way of  coding as compared to regular function.
